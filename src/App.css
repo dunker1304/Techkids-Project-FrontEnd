@@ -1,32 +1,73 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
+
+/* NAVBAR CSS ///////////////////////////////////////////////////////////////////////////////////////////////*/
+h1.logo {
+    float: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.col-xs-7.col-sm-7.col-md-7.col-lg-7.navbar-left {
+    background: #d8e0e8;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header.App-header {
+    background: #e2e3e4;
+}
+a.homePage, a.catagory,a.register,a.login {
+    color: #0a6db7;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+a.homePage:hover, a.catagory:hover,a.register:hover, a.login:hover {
+    color: #687688;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.col-xs-5.col-sm-5.col-md-5.col-lg-5.navbar-right {
+    background: #cacaca;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+a.login, a.register {
+    float: right;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* Banner CSS //////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.container.banner {
+    background: #e8e8e8;
+    height: 180px;
+}
+
+.banner h2 {
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+    margin-top: 40px;
+}
+
+p.intro {
+    width: 50%;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+a.askQuestion {
+    text-decoration: none;
+    background: #fcf5e2;
+    padding: 4px;
+}
+
+a.askQuestion:hover {
+    color: black;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
