@@ -28,7 +28,7 @@ class PostInfo extends Component {
                         </div>
                         
                         
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 info">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 infoPost">
                             <h3>Infomation</h3>
                             <span>Catagory: </span> <a href="" className="catagory">Friendship</a> <br/>
                             <span>By author: </span> <a href="" className="author">dunk13</a> <br/>

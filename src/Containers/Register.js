@@ -5,7 +5,9 @@ class Register extends Component {
         return (
             <div className="container abc ">
                 <div className="row ">
-                    <div className=" col-md-5  contentRegister fadeInDown">
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 contentRegister fadeInDown">
                         <div className="content ">
                             <div className="modal-header fadeIn first">
 
@@ -59,10 +61,13 @@ class Register extends Component {
 
                             </div>
                             <div className="modal-footer fadeIn fourth">
-                                <small>Already a member? <a className="alreadySignUp" href="#">Login here</a></small>
+                                <small>Already a member? <a className="alreadySignUp" href="/login">Login here</a></small>
                             </div>
                         </div>
                     </div>
+                </div>
+                
+                    
                 </div>
             </div>
         );

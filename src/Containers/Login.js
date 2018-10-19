@@ -25,7 +25,7 @@ class Login extends Component {
                    
 
                     <div className="formFooter">
-                        <a className="underlineHover" href="#">Sign Up</a>
+                        <a className="underlineHover" href="/register">Sign Up</a>
 
                     </div>
                 </div> {/*-- end formContent--*/}

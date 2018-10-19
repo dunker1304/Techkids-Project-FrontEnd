@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 
 
@@ -16,7 +16,7 @@ h1.logo {
 header.App-header {
     background: #e2e3e4;
 }
-a.homePage, a.catagory,a.register,a.login {
+a.homePage, a.category,a.register,a.login {
     color: #0a6db7;
     font-size: 18px;
     font-weight: 500;
@@ -26,7 +26,7 @@ a.homePage, a.catagory,a.register,a.login {
     margin-top: 24px;
 }
 
-a.homePage:hover, a.catagory:hover,a.register:hover, a.login:hover {
+a.homePage:hover, a.category:hover,a.register:hover, a.login:hover {
     color: #687688;
 }
 
@@ -83,7 +83,7 @@ a.askQuestion:hover {
     font-size: 18px;
 }
 
-h4.title {
+.postInfo h4.title {
     background: aliceblue;
     padding: 5px;
 }
@@ -167,15 +167,12 @@ h3.contact {
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////*/
-=======
+
 
 
 /* Login Css */
 
-html {
-  
-  
-}
+
 
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -492,6 +489,12 @@ a.lastsubject{
 
 /*  Register css */
 
+.col-xs-5.col-sm-5.col-md-5.col-lg-5.contentRegister.fadeInDown {
+  display: block;
+  margin: auto;
+}
+
+
 .control-label {
   color:#60a0ff;
   font-weight: 600;
@@ -521,7 +524,7 @@ padding: 0 0 5px 0 ;
   position: absolute;
   top:50%;
   left:50%;
-  transform: translateX(-25%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
  
