@@ -172,6 +172,17 @@ h3.contact {
 .col-xs-4.col-sm-4.col-md-4.col-lg-4.contact {
     color: gray;
 }
+.postInfo {
+  margin-top: 60px;
+}
+
+.footer {
+  margin-top: 60px;
+}
+
+.container.loginRegister {
+  margin-top: 50px;
+}
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////*/
 

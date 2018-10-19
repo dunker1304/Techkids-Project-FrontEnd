@@ -37,7 +37,7 @@ class App extends Component {
                     <Banner/>                       
                     <PostInfo/>
                     {
-                      (!this.state.isAuthenticated) ? (<div className="container"> 
+                      (!this.state.isAuthenticated) ? (<div className="container loginRegister"> 
                                   <div className="row">                            
                                         <LoginHome/>
                                         <RegisterHome/>                           
