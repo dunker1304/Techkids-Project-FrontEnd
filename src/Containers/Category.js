@@ -21,23 +21,75 @@ class Category extends Component {
             <div className="container ">
                <div className="row ">
                  
-                  <div className="col-10 ml-auto mr-auto">
+                  <div className="col-12 ml-auto mr-auto">
                     {this.state.now.toUTCString}
-                     <span className="time pull-right"> <i class="fa fa-clock-o" aria-hidden="true"></i> It's currently {this.state.now.toUTCString()}</span>
+                     <span className="time pull-right"> <i class="fa fa-clock-o" aria-hidden="true"></i> It's currently {this.state.now.toDateString()}</span>
                   </div>
-                  <div className="col-10 panel panel-default ml-auto mr-auto">
-                     <table className="footable table table-striped table-borderd table-white table-primary table-hover footable-loaded tablet">
+                  <div className="col-12 panel panel-default ml-auto mr-auto">
+                     <table className=" table  table-borderd table-white table-primary  my-table ">
                         <thead>
                             <tr>
-                                <th data-class="expand" className="footable-visible footable-first-column"> <i class="fa fa-th-list" aria-hidden="true"></i> Main Catogory</th>
-                                <th className="large80 footable-visible"><i class="fa fa-bar-chart" aria-hidden="true"></i> Statistics</th>
-                                <th className="large20 footable-visible footable-last-column"><i class="fa fa-comments-o" aria-hidden="true"></i> Last Post</th>
+                                <th data-class="expand"> <i class="fa fa-th-list" aria-hidden="true"></i> Main Catogory</th>
+                                <th className=""><i class="fa fa-bar-chart" aria-hidden="true"></i> Statistics</th>
+                                <th className=""><i class="fa fa-comments-o" aria-hidden="true"></i> Last Post</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="expand footable-visible footable-column-fisrt"></td>
+                        
+                            <tr  >
+                             
+                                <td  className="my-td">
+                                
+                                  <span className="forum-image"> <img src="http://www.sitesplat.com/demo/phpBB3/FLATBOOTS//images/folder.png"/></span>
+                                   <i className="fa fa-rss rss-color-forum btn-css pull-right hiddlen-xs hidden-md row-icon"></i>
+                                  <span className="desc-wrapper"> <a href=""> Relationshipsddddddddddddddddddddddđ</a></span> 
+                                 
+                                </td>
+                                <td className="my-td" >
+                                    100 <br/>Posts
+                                </td>
+                                <td className="my-td" >
+                                    <div className="lastpost ">
+                                     <span className="lastpostavatar ">
+                                      <img src="http://planetstyles.net/demo/milk/3.2/1/download/file.php?avatar=2_1476042631.png" alt="avatar" className="float-md-left"></img>
+                                     </span>
+                                     <div className=" info">
+                                       <a href="" className="lastsubject"> You are the apple of my eye</a>
+                                       <br/> by <a href="" className="lastauthor">Kieu Quynh</a>
+                                       <br/> We Oct 17, 2018 3:45 PM
+                                      </div>
+                                    </div>
+                                </td>
+                              
                             </tr>
+
+                                 <tr >
+                             
+                             <td className="my-td" >
+                             
+                               <span className="forum-image"> <img src="http://www.sitesplat.com/demo/phpBB3/FLATBOOTS//images/folder.png" /></span>
+                                <i className="fa fa-rss rss-color-forum btn-css pull-right hiddlen-xs hidden-md row-icon"></i>
+                               <span className="desc-wrapper"> <a href=""> Relationshipsddddddddddddddddddddddđ</a></span> 
+                              
+                             </td>
+                             <td className="my-td">
+                                 100 <br/> Posts
+                             </td>
+                             <td className="my-td">
+                                 <div className="lastpost">
+                                  <span className="lastpostavatar">
+                                   <img src="http://planetstyles.net/demo/milk/3.2/1/download/file.php?avatar=2_1476042631.png" alt="avatar" className="float-md-left"></img>
+                                  </span>
+                                  <div className=" info">
+                                  <a href="" className="lastsubject"> You are the apple of my eye</a>
+                                   <br/> by <a href="" className="lastauthor">Kieu Quynh</a>
+                                   <br/> We Oct 17, 2018 3:45 PM
+                                   </div>
+                                 </div>
+                             </td>
+                           
+                         </tr>
+                     
                         </tbody>
                      </table>
 
