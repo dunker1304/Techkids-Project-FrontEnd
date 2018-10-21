@@ -64,7 +64,9 @@ class App extends Component {
             <Route path='/category' render={props=>{
               return (
                 <div>
-                    <NavBar/>
+                    <header className="App-header">
+                        <NavBar/>
+                    </header>
                     <Banner/>
                     <Category/>
                     <Footer/>                                   

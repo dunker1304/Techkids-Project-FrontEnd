@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import background from '../images/tile-head.png';
+import photo from '../images/photo.jpg';
 class Banner extends Component {
     render() {
         return (
@@ -12,6 +13,11 @@ class Banner extends Component {
                             <p className="intro">What's your problems? Curious how others might perceive your situation? <br/>
                             <a href="" className="askQuestion">Ask Your Question</a> today and find out what others think...</p>
                         </div>
+                        
+                        
+                        
+                        
+                        
                         
                     </div>
                 </div>

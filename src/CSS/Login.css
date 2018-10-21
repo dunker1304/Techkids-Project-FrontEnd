@@ -405,3 +405,6 @@ body {
     outline:none;
     color:#ffffff;
    }
+   .container.loginRegister {
+    margin-top: 50px;
+  }
