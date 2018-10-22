@@ -1,23 +1,57 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+import { withRouter } from 'react-router-dom'
 
 class Login extends Component {
+    state = {
+        username: '',
+        password: '', 
+    }
+
+    handlerChangeInput = (event) => {
+        const { value, name } = event.target;
+        this.setState({[name]: value});
+    }
+
+    
+
+        handlerOnSubmit=(event)=>{
+            event.preventDefault();
+            
+            axios.post("http://localhost:6969/api/login",{
+                username: this.state.username,
+                password: this.state.password
+              })
+              .then(response=>{
+                console.log(response.data)
+                
+                
+                this.props.history.push('/');
+               
+              })
+              .catch (err=>{console.error(err)});
+        
+        }
+    
+    
     render() {
         return (
             <div className="wrapper fadeInDown">
-                <div className="formContent">
+                <div className="formContent">   
                     <div className="fadeIn first">
                         <img src="http://www.thingswedontknow.com/img/doo/psychology.png" id="icon" alt="User Icon" />
                         <h1>Log In</h1>
                     </div>
 
-                    <form  >
-                        <input type="text" id="login" className="fadeIn second" name="login" placeholder="Username" />
-                        <input type="password" id="password" className="fadeIn third" name="password" placeholder="Password" />
+                    <form  onSubmit={this.handlerOnSubmit}>  
+                        <input onChange={this.handlerChangeInput} type="text" id="login" value={this.state.username} className="fadeIn second" name="username" placeholder="Username" />
+                        <input onChange={this.handlerChangeInput} type="password" id="password" value={this.state.password} className="fadeIn third" name="password" placeholder="Password" />
                         <div className="form-check fadeIn third">
                             <input type="checkbox" name="remember" id="remember" className="form-check-input" />
                             <label for="remember" className="form-check-label" id="lbal"> Remember Me</label>
                         </div>
-                        <input type="Submit" value="Log In" className="btn" />
+                        <input type="submit" value="Log In" className="btn" />
                         <a href="#" className="forgot-password">
                         Forgot the password?
                         </a>
@@ -36,4 +70,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

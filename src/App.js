@@ -20,6 +20,9 @@ class App extends Component {
   state ={
     isAuthenticated: false
   }
+  changeAuthenticated=()=>{
+    this.setState({isAuthenticated:true});
+  }
   render() {
     
     return (
@@ -55,7 +58,7 @@ class App extends Component {
             
 {/* link login, register */}
             <Route path='/login' render={ props =>{
-              return <Login/>
+              return <Login isAuthenticated={this.changeAuthenticated}></Login>
             }} ></Route>
 
             <Route path='/register' render={props =>{
@@ -93,7 +96,11 @@ class App extends Component {
                   
                 )
               }}>
-              </Route>   
+              </Route> 
+
+
+              
+                
            </div>
       </BrowserRouter>
       
