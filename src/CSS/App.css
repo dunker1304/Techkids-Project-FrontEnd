@@ -1,7 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 
+.psychologist{
+    background: whitesmoke;
+}
 
+div#root{
+    background:  whitesmoke;
+}
 /* NAVBAR CSS ///////////////////////////////////////////////////////////////////////////////////////////////*/
 h1.logo {
     float: left;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './CSS/App.css';
 import './CSS/Login.css';
+import './CSS/UserInfo.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar';
 import Banner from './Components/Banner';
@@ -14,6 +15,7 @@ import Register from './Containers/Register';
 import LoginHome from './Components/LoginHome';
 import RegisterHome from './Components/RegisterHome';
 import Category from './Containers/Category';
+import UserInfo from './Containers/UserInfo';
 class App extends Component {
   state ={
     isAuthenticated: false
@@ -74,7 +76,24 @@ class App extends Component {
                 
               )
               
-            }}></Route>    
+            }}></Route> 
+
+{/* link User Infomation*/}
+              <Route path="/user" render={props=>{
+                return(
+                  <div>
+                      <header className="App-header">
+                        <NavBar/>
+                      </header>
+                      <Banner/>
+                      <UserInfo/>
+                      <Footer/> 
+                        
+                  </div>
+                  
+                )
+              }}>
+              </Route>   
            </div>
       </BrowserRouter>
       
