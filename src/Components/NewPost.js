@@ -5,9 +5,15 @@ export default class NewPost extends Component {
   render() {
     return (
       <div>
-        <form className="container mt-3">
-            <div className="cbbCategories row">
-                <select className="form-control form-control-lg mt-3">
+        <div >
+        <p className="h1 text-center text-info mt-3">POST YOUR PROBLEM</p>
+        <hr/>
+        </div>
+        <form className=" container mt-3 ">
+            <p className ="row">Catagory</p>  
+            <div className="cbbCategories row mt-3">
+  
+                <select className="form-control">
                     <option value="0">Select category:</option>
                     <option value="1">Family</option>
                     <option value="2">Love</option>
@@ -17,7 +23,9 @@ export default class NewPost extends Component {
                 </select>
             </div>
             <div className=" row mt-3">
-            <p className="text-primary ">Wirte your problem here! </p>
+            <p>Title:</p>
+            <textarea className="form-control "  ></textarea>
+            <p className="mt-3">Description :</p>
             <textarea className="form-control " id="content" ></textarea>
             <p className="text-danger mt-3" id="alert"> The content is EMPTY! </p>
             </div>
