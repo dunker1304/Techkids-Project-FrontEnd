@@ -1,0 +1,18 @@
+.container .post #likeview {
+    float: right;
+    margin-left: 20px
+}
+
+.container .post #likeview table th{
+    padding-right: 20px; 
+}
+
+.container .post #likeview img.iconLike {
+   width: 30px;
+   height: 30px;
+}
+
+.container .post #likeview img.iconView{
+    width: 40px;
+    height: 40px;
+ }
