@@ -14,8 +14,8 @@ class PostInfo extends Component {
                             typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever 
                             since the 1500s, when an unknown printer...</p>
                             
-                            <a href="/detailpost">read more</a>
-                            <button type="button" class="btn btn-info">Read More</button>
+                            <a href="/detailpost" className="text-info">read more</a>
+                            
                             
                         </div>
                         
