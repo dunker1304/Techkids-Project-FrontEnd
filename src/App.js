@@ -17,6 +17,7 @@ import RegisterHome from './Components/RegisterHome';
 import Category from './Containers/Category';
 import UserInfo from './Containers/UserInfo';
 import DetailPost from './Containers/DetailPost'
+import NewPost from './Components/NewPost'
 class App extends Component {
   state ={
     isAuthenticated: false
@@ -112,6 +113,18 @@ class App extends Component {
                 
                 }}></Route>
               
+{/* Link NewPost    */}
+            <Route path="/newpost" render={props =>{
+              return (
+                <div>
+                <NavBar/>
+                <Banner/>
+                <NewPost/>
+                <Footer/>  
+              </div>
+              )
+                
+                }}></Route>
                 
            </div>
       </BrowserRouter>

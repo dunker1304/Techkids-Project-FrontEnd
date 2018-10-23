@@ -11,7 +11,7 @@ class Banner extends Component {
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <h2>Psychologist</h2>
                             <p className="intro">What's your problems? Curious how others might perceive your situation? <br/>
-                            <a href="" className="askQuestion">Ask Your Question</a> today and find out what others think...</p>
+                            <a href="/newpost" className="askQuestion">Ask Your Question</a> today and find out what others think...</p>
                         </div>
                         
                         

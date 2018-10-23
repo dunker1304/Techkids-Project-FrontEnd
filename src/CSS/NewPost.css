@@ -1,0 +1,15 @@
+div.cbbCategories select {
+    width: 250px;
+}
+.container #content {
+    width: 100%;
+    height: 200px;
+}
+
+#submitBtn {
+    width: 20%;
+    height: 50%;
+}
+#alert {
+    display: none;
+}
