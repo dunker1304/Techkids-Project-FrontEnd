@@ -43,7 +43,7 @@ class App extends Component {
                         <NavBar/>
                     </header> 
                     <Banner/>                       
-                    <PostInfo/>
+                    <PostInfo {...props}/>
                     {
                       (!this.state.isAuthenticated) ? (<div className="container loginRegister"> 
                                   <div className="row">                            
@@ -104,9 +104,11 @@ class App extends Component {
             <Route path="/detailpost" render={props =>{
               return (
                 <div>
-                <NavBar/>
+                <header className="App-header">
+                        <NavBar/>
+                </header> 
                 <Banner/>
-                <DetailPost/>
+                <DetailPost />
                 <Footer/>  
               </div>
               )
