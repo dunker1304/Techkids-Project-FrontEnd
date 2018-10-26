@@ -125,7 +125,7 @@ class App extends Component {
                         <NavBar/>
                 </header> 
                 <Banner/>
-                <DetailPost />
+                <DetailPost {...props} />
                 <Footer/>  
               </div>
               )

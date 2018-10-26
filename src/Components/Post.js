@@ -3,7 +3,25 @@ import '../CSS/post.css'
 import Comment from '../Components/Comment'
 import iconLike from '../images/like.svg'
 import iconView from '../images/view.svg'
+import queryString from 'query-string';
+import axios from 'axios';
 export default class Post extends Component {
+state={
+
+}
+  componentDidMount(){
+    const values = queryString.parse(this.props.location.search);
+   
+    axios.get(`http://localhost:6969/api/post?page=${values.postId}`)
+        .then(data=>{
+            this.setState({Posts: data.data.post,
+            });
+            
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+}
   render() {
     let post = {
         title : "title of post",

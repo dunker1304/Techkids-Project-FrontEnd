@@ -10,7 +10,7 @@ class PostInfo extends Component {
 
     componentDidMount(){
         const values = queryString.parse(this.props.location.search);
-        console.log(values.page);
+        //console.log(this.props.location);
         axios.get(`http://localhost:6969/api/post?page=${values.page? values.page : 1 }`)
             .then(data=>{
                 this.setState({Posts: data.data.post,
@@ -96,7 +96,7 @@ class PostInfo extends Component {
                     typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever 
                     since the 1500s, when an unknown printer...</p>
                     
-                    <a href="/detailpost">Read more...</a>
+                    <a href={`http://localhost:3000/detailpost?postId=${item._id}`}>Read more...</a>
                     
                     
                 </div>
