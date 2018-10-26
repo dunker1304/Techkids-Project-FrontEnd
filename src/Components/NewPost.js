@@ -2,24 +2,27 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../CSS/NewPost.css'
 import axios from 'axios';
+import queryString from  'query-string'
 
 export default class NewPost extends Component {
   state= {
      title:"",
      description:"",
      categoiesCombo:"",
-     category:""
+     category:"5bcc9e238bf4c22e2cd50703"
 
 
   }
 
 
   componentDidMount(){
+    
     axios.get('http://localhost:6969/api/category/data')
     
     .then(data => {
      this.setState({ categoiesCombo: data.data.result});
-     
+  
+    
     })
     .catch(err => { console.log(err) });
   
@@ -33,9 +36,6 @@ export default class NewPost extends Component {
 
    handlerOnSubmit=(event)=>{
             event.preventDefault();
-            // console.log(this.state.title);
-            // console.log(this.state.description);
-            console.log(this.state.category);
            
             axios.post("http://localhost:6969/api/post",{
             
@@ -53,7 +53,14 @@ export default class NewPost extends Component {
                 this.props.history.push('/');
                
               })
-              .catch (err=>{console.error(err)});
+              .catch (err=>{
+                 
+                const value=((this.props.location.pathname))
+               
+                this.props.history.push(`/login?path=${value}`);
+              
+              
+              });
         }
     
 

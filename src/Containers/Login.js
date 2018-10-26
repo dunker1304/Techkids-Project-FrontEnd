@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import queryString from 'query-string';
 import { withRouter } from 'react-router-dom'
 
 class Login extends Component {
@@ -31,35 +31,17 @@ class Login extends Component {
                 
               })
               .then(response=>{
-                console.log(response.status.error)
+                const values = queryString.parse(this.props.location.search);
+                const path=values.path;
                 
                 this.props.isAuthenticated();
                 
-                this.props.history.push('/');
+                path? this.props.history.push(`${path}`) : this.props.history.push(`/`)
                
               })
               .catch (err=>{console.error(err)});
             
-        //     axios.post("http://localhost:6969/api/auth/login",
-            
-
-            
-        //     {
-              
-        //         username: this.state.username,
-        //         password: this.state.password
-        //       }
-              
-        //       )
-        //       .then(response=>{
-        //         console.log(response.status.error)
-                
-        //         this.props.isAuthenticated();
-                
-        //         this.props.history.push('/');
-               
-        //       })
-        //       .catch (err=>{console.error(err)});
+       
         
          }
     

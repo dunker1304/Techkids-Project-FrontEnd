@@ -6,13 +6,35 @@ import iconView from '../images/view.svg'
 import queryString from 'query-string';
 import axios from 'axios';
 import { request } from 'http';
-export default class Post extends Component {
+import { withRouter } from 'react-router-dom';
+class Post extends Component {
 state={
   
-}
+} 
+
+  
   componentDidMount(){
     const values = queryString.parse(this.props.location.search);
     //console.log(values.postId);
+    axios({
+      method: 'PUT',
+      url: `http://localhost:6969/api/post/detailpost?postId=${values.postId}`,
+      data: {
+      }
+      ,
+      withCredentials:true
+      
+    })
+    .then(data=>{
+        console.log(data);
+      //window.location.reload();  // VERY IMPORTANT
+                
+      })
+    .catch(error=>{
+        console.log(error);
+        })
+
+
     axios.get(`http://localhost:6969/api/post/detailpost?postId=${values.postId}`)
         .then(data=>{
             this.setState({post: data.data.post,
@@ -21,7 +43,9 @@ state={
         })
         .catch(error=>{
             console.log(error);
-        })
+        });
+    
+    
   }
 
   handleTextChange = (event) => {
@@ -29,14 +53,39 @@ state={
     this.setState({[name]: value});
   }
 
-  handleAddComment=() =>{
+  handleLike = (event) =>{
     const values = queryString.parse(this.props.location.search);
     
     axios({
       method: 'PUT',
-      url: `http://localhost:6969/api/post/detailpost?postId=${values.postId}`,
+      url: `http://localhost:6969/api/post/likedBy?postId=${values.postId}`,
       data: {
-        textArea : "this.state.textArea",
+      }
+      ,
+      withCredentials:true
+      
+    })
+            .then(data=>{
+                console.log(data);
+                window.location.reload();  // VERY IMPORTANT
+                
+            })
+            .catch(error=>{
+                console.log(error);
+                const value=this.props.location.pathname + this.props.location.search;
+               
+                this.props.history.push(`/login?path=${value}`);
+            })
+  }  
+  handleAddComment=(event) =>{
+    event.preventDefault();
+    const values = queryString.parse(this.props.location.search);
+    
+    axios({
+      method: 'PUT',
+      url: `http://localhost:6969/api/post/addComment?postId=${values.postId}`,
+      data: {
+        textArea : this.state.textArea,
 
       }
       ,
@@ -45,15 +94,19 @@ state={
     })
             .then(data=>{
                 console.log(data);
+                window.location.reload();  // VERY IMPORTANT
                 
             })
             .catch(error=>{
                 console.log(error);
+                const value=this.props.location.pathname + this.props.location.search;
+               
+                this.props.history.push(`/login?path=${value}`);
             })
   }
   render() {
     const {post} = this.state;
-    console.log(post);
+    
     const comments = this.state.post? this.state.post.comment.map(comment =>
         <div>
             <hr/>
@@ -92,13 +145,13 @@ state={
         <form onSubmit={this.handleAddComment}>
         <div className="row mt-3 ml-2">
             <div className="col-10 " >
-              <textarea name="textArea" handleTextChange={this.handleTextChange} className="form-control" style={{width: '100%', height: '200px'}} placeholder="Share your opinion">
+              <textarea name="textArea" required onChange={this.handleTextChange} className="form-control" style={{width: '100%', height: '200px'}} placeholder="Share your opinion">
               </textarea>
             </div>
 
             <div className="col-2 container-fluid">
               <div className="row mt-5">
-                <input type="submit" className="form-control btn btn-primary" value='Like this post!'/>
+                <input onClick={this.handleLike} type="button" className="form-control btn btn-primary" value='Like this post!'/>
               </div>
               <div className="row mt-3">
                 <input  type="submit" className="form-control btn btn-info" value="Share"/>
@@ -117,3 +170,4 @@ state={
     )
   }
 }
+export default withRouter(Post);

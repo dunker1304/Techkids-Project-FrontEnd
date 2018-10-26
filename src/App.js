@@ -136,7 +136,9 @@ class App extends Component {
             <Route path="/newpost" render={props =>{
               return (
                 <div>
-                <NavBar/>
+                <header className="App-header">
+                        <NavBar/>
+                </header> 
                 <Banner/>
                 <NewPost {...props}/>
                 <Footer/>  

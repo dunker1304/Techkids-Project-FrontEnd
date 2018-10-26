@@ -3,7 +3,7 @@ import '../CSS/Comment.css'
 import iconBoy from '../images/boy.svg'
 export default class Comment extends Component {
   render() {
-    console.log(this.props.info);
+    
     return (
       
       <div className="row mt-3 comment">                        
