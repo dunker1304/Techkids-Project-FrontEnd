@@ -279,11 +279,7 @@ body {
   }
   
   
-  .desc-wrapper {
-    display:block;
-    padding:12px 20px 5px 54px;
-    word-break:break-all;
-  }
+  
   .desc-wrapper a{
     font-weight:600;
     color:#676767;

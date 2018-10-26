@@ -18,21 +18,50 @@ class Login extends Component {
 
         handlerOnSubmit=(event)=>{
             event.preventDefault();
-            
-            axios.post("http://localhost:6969/api/login",{
+            axios({
+                method: 'post',
+                url: "http://localhost:6969/api/auth/login",
+                data: {
+                  
                 username: this.state.username,
                 password: this.state.password
+                }
+                ,
+                withCredentials:true
+                
               })
               .then(response=>{
-                console.log(response.data)
+                console.log(response.status.error)
                 
+                this.props.isAuthenticated();
                 
                 this.props.history.push('/');
                
               })
               .catch (err=>{console.error(err)});
+            
+        //     axios.post("http://localhost:6969/api/auth/login",
+            
+
+            
+        //     {
+              
+        //         username: this.state.username,
+        //         password: this.state.password
+        //       }
+              
+        //       )
+        //       .then(response=>{
+        //         console.log(response.status.error)
+                
+        //         this.props.isAuthenticated();
+                
+        //         this.props.history.push('/');
+               
+        //       })
+        //       .catch (err=>{console.error(err)});
         
-        }
+         }
     
     
     render() {

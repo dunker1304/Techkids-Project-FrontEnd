@@ -18,6 +18,7 @@ import Category from './Containers/Category';
 import UserInfo from './Containers/UserInfo';
 import DetailPost from './Containers/DetailPost'
 import NewPost from './Components/NewPost'
+import PostOfOneCategory from './Components/postOfOneCategory';
 class App extends Component {
   state ={
     isAuthenticated: false
@@ -68,7 +69,7 @@ class App extends Component {
             }}></Route>
            
 {/* link catagory */}    
-            <Route path='/category' render={props=>{
+            <Route exact path='/category' render={props=>{
               return (
                 <div>
                     <header className="App-header">
@@ -83,15 +84,31 @@ class App extends Component {
               
             }}></Route> 
 
+{/* link catagory/:id */}    
+            <Route exact path='/category/:id' render={props=>{
+              return (
+                <div>
+                    <header className="App-header">
+                        <NavBar/>
+                    </header>
+                    <Banner/>
+                    <PostOfOneCategory {...props}/>
+                    <Footer/>                                   
+                </div>
+                
+              )
+              
+            }}></Route> 
+
 {/* link User Infomation*/}
-              <Route path="/user" render={props=>{
+              <Route exact path="/user/:id" render={props=>{
                 return(
                   <div>
                       <header className="App-header">
                         <NavBar/>
                       </header>
                       <Banner/>
-                      <UserInfo/>
+                      <UserInfo {...props}/>
                       <Footer/> 
                         
                   </div>
@@ -101,7 +118,7 @@ class App extends Component {
               </Route> 
 
 {/* Link post    */}
-            <Route path="/detailpost" render={props =>{
+            <Route path="/detailpost/" render={props =>{
               return (
                 <div>
                 <header className="App-header">
@@ -121,7 +138,7 @@ class App extends Component {
                 <div>
                 <NavBar/>
                 <Banner/>
-                <NewPost/>
+                <NewPost {...props}/>
                 <Footer/>  
               </div>
               )
