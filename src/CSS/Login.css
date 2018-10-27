@@ -243,12 +243,13 @@ body {
   .lastpostavatar,  {
     padding:0;
     display:block;
-    
+   
   }
   .info {
     font-size:11px;
     padding:0;
-    float:left;
+   float:left
+    
   }
   
   
@@ -257,6 +258,7 @@ body {
     border-radius:50%;
     border:none;
     width:30px;
+    height:30px;
     display:inline-block;
   }
   a.lastsubject{

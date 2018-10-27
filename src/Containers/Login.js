@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import queryString from 'query-string';
+
 import { withRouter } from 'react-router-dom'
 
 class Login extends Component {
     state = {
         username: '',
         password: '', 
+        nameWrong: false,
+        passWrong:false
     }
 
     handlerChangeInput = (event) => {
         const { value, name } = event.target;
         this.setState({[name]: value});
     }
-
-    
-
-        handlerOnSubmit=(event)=>{
+  handlerOnSubmit=(event)=>{
             event.preventDefault();
             axios({
                 method: 'post',
@@ -31,18 +30,19 @@ class Login extends Component {
                 
               })
               .then(response=>{
-                const values = queryString.parse(this.props.location.search);
-                const path=values.path;
-                
+                const values = (this.props.location.search).replace("?path=","");
+             
                 this.props.isAuthenticated();
                 
-                path? this.props.history.push(`${path}`) : this.props.history.push(`/`)
+                values? this.props.history.push(`${values}`) : this.props.history.push(`/`)
                
               })
-              .catch (err=>{console.error(err)});
-            
-       
-        
+              .catch (err=>{
+                if  (err.response.status===402) {
+                    this.setState({passWrong:true,nameWrong:false});
+                }
+                     else this.setState({nameWrong:true})
+               });
          }
     
     
@@ -57,7 +57,9 @@ class Login extends Component {
 
                     <form  onSubmit={this.handlerOnSubmit}>  
                         <input onChange={this.handlerChangeInput} type="text" id="login" value={this.state.username} className="fadeIn second" name="username" placeholder="Username" />
+                         {this.state.nameWrong? <p>Username wrong</p> : ""} 
                         <input onChange={this.handlerChangeInput} type="password" id="password" value={this.state.password} className="fadeIn third" name="password" placeholder="Password" />
+                        {this.state.passWrong? <p>Password wrong</p> : ""} 
                         <div className="form-check fadeIn third">
                             <input type="checkbox" name="remember" id="remember" className="form-check-input" />
                             <label for="remember" className="form-check-label" id="lbal"> Remember Me</label>

@@ -43,7 +43,7 @@ class Category extends Component {
                   <img src="http://planetstyles.net/demo/milk/3.2/1/download/file.php?avatar=2_1476042631.png" alt="avatar" className="float-md-left"></img>
                  </span>
                  <div className=" info">
-                   <a href ={ item.bmark[item.bmark.length-1] ?`http://localhost:3000/detailpost/${item.bmark[item.bmark.length-1]._id}` :""} className="lastsubject">  {item.bmark[item.bmark.length-1]?  item.bmark[item.bmark.length-1].title  :""}</a>
+                   <a href ={ item.bmark[item.bmark.length-1] ?`http://localhost:3000/detailpost?postId=${item.bmark[item.bmark.length-1]._id}` :""} className="lastsubject">  {item.bmark[item.bmark.length-1]?  item.bmark[item.bmark.length-1].title  :""}</a>
                    <br/> by <a href = { item.TEST[item.TEST.length-1]?`http://localhost:3000/user/${item.TEST[item.TEST.length-1]._id}` :""} className="lastauthor">  
                        {item.TEST[item.TEST.length-1]? item.TEST[item.TEST.length-1].username:""}
                      </a>

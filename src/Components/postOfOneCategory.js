@@ -26,7 +26,7 @@ class postOfOneCategory extends Component {
                 <h4 className="title">Title: {item.title}</h4>
                 <p class="description">{item.description.substring(0,200)}...</p>
                 
-                <a href={`/detailpost/${item._id}`} className="text-info">read more</a>
+                <a href={`/detailpost?postId=${item._id}`} className="text-info">read more</a>
                 
                 
             </div>
