@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './CSS/App.css';
 import './CSS/Login.css';
 import './CSS/UserInfo.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar';
 import Banner from './Components/Banner';
-import BreadCrumb from './Components/BreadCrumb';
 import Footer from './Components/Footer';
-import PostInfo from './Containers/PostInfo';
+import NewPostInfo from './Containers/NewPostInfo';
 import { BrowserRouter, Route } from "react-router-dom";
 import Login from './Containers/Login';
 import Register from './Containers/Register';
@@ -19,6 +17,7 @@ import UserInfo from './Containers/UserInfo';
 import DetailPost from './Containers/DetailPost'
 import NewPost from './Components/NewPost'
 import PostOfOneCategory from './Components/postOfOneCategory';
+import PopularPostInfo from './Containers/PopularPostInfo';
 class App extends Component {
   state ={
     isAuthenticated: false
@@ -43,8 +42,11 @@ class App extends Component {
                     <header className="App-header">
                         <NavBar/>
                     </header> 
-                    <Banner/>                       
-                    <PostInfo {...props}/>
+                    <Banner/>
+                                          
+                    <NewPostInfo {...props}/>
+                    
+                    <PopularPostInfo {...props}/>
                     {
                       (!this.state.isAuthenticated) ? (<div className="container loginRegister"> 
                                   <div className="row">                            

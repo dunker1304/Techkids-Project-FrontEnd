@@ -406,3 +406,16 @@ body {
    .container.loginRegister {
     margin-top: 50px;
   }
+
+  button#btnSignUp {
+    padding: 4px 8px 4px 8px;
+    float: right;
+  }
+
+button#btnRegister {
+  color: white;
+  background: #007bff;
+  display: block;
+  margin: auto;
+  margin-top: 32px;
+}

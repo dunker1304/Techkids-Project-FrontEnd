@@ -30,7 +30,7 @@ class LoginHome extends Component {
                                 aria-label="password" aria-describedby="basic-addon1" name="password" />
                         </div>
                     </div>
-                    <div className="form-check pull-right">
+                    <div className="form-check pull-left">
                             <input type="checkbox" name="remember" id="remember" className="form-check-input" />
                             <label for="remember" className="form-check-label" id="lbal"> Remember Me</label>
                      </div>

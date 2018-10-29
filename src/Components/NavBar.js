@@ -11,7 +11,7 @@ class NavBar extends Component{
 
                         <h1 className="logo">Psychologist</h1>
                         <a href="/" className="homePage">Home</a>
-                        <a href="/category" className="category">Catagories</a>
+                        <a href="/category" className="category">Categories</a>
                     </div>
                     
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 navbar-right">

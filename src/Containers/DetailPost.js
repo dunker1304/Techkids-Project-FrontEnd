@@ -5,7 +5,6 @@ import iconLike from '../images/like.svg'
 import iconView from '../images/view.svg'
 import queryString from 'query-string';
 import axios from 'axios';
-import { request } from 'http';
 import { withRouter } from 'react-router-dom';
 class Post extends Component {
 state={

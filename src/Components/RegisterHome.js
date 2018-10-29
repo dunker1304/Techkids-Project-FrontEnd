@@ -12,7 +12,7 @@ class RegisterHome extends Component {
                    Before you register please ensure you are familiar with our terms of use and related policies.
                     Please ensure you read any forum rules as you navigate around the board.
               </p>
-              <button type="button " id="btnSignUp" className="btn  nutBam" >Register</button>
+              <button type="button " id="btnRegister" className="btn  nutBam" >Register</button>
                 
             </div>
         );
