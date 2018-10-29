@@ -19,6 +19,7 @@ import NewPost from './Components/NewPost'
 import PostOfOneCategory from './Components/postOfOneCategory';
 import PopularPostInfo from './Containers/PopularPostInfo';
 import axios from 'axios';
+
 class App extends Component {
 state={
 
@@ -26,7 +27,7 @@ state={
   changeAuthenticated=()=>{
    
     const token= sessionStorage.getItem("status");
-    console.log(token);
+    //console.log(token);
     if(!token ) return false;
     else return true;
   }
@@ -38,7 +39,7 @@ state={
               this.setState({
                 NumberOfPosts: data.data.NumberOfPosts
               })
-              console.log(this.state.NumberOfPosts);
+              //console.log(this.state.NumberOfPosts);
           })
           .catch(error =>{
             console.log(error);
@@ -60,7 +61,7 @@ state={
               return (
                 <div className="psychologist">
                     <header className="App-header">
-                        <NavBar/>
+                        <NavBar {...props} isAuthenticated={this.changeAuthenticated}/>
                     </header> 
                     <Banner/>
                                           

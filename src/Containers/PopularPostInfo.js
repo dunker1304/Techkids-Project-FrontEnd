@@ -11,7 +11,7 @@ class PopularPostInfo extends Component {
     componentDidMount(){
         const values = queryString.parse(this.props.location.search);
         //console.log(this.props.location);
-        axios.get(`http://localhost:6969/api/post/popularpost?page=${values.page? values.page : 1 }`)
+        axios.get(`http://localhost:6969/api/post/popularpost?newPostPage=${values.newPostPage || 1 }&popularPostPage=${values.popularPostPage||1}`)
             .then(data=>{
                 this.setState({Posts: data.data.post,
                 });
@@ -43,7 +43,7 @@ class PopularPostInfo extends Component {
 
         // render page show on homepage
         const values = queryString.parse(this.props.location.search);
-        const currentPage = values.page || 1;
+        const currentPage = values.popularPostPage || 1;
         const showPageNumbers = [];
         if(+currentPage -2 >= 1 && +currentPage +2 <= pageNumbers.length){
             for(let i= +currentPage-2;i<= +currentPage+2;i++){
@@ -75,7 +75,7 @@ class PopularPostInfo extends Component {
             return (
               <li>
                 <a key={number} id={number} className={(currentPage==number)? "active":""}
-                href={`http://localhost:3000?page=${number}`}
+                href={`http://localhost:3000?newPostPage=${values.newPostPage||1}&popularPostPage=${number}`}
                 >
                     {number}
                 </a>
@@ -128,10 +128,10 @@ class PopularPostInfo extends Component {
                     {allPost}
                     
                     <ul className="page-numbers">
-                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).page == 1)? 'disabled': ''}`} href={`http://localhost:3000?page=1`} 
+                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).popularPostPage == 1)? 'disabled': ''}`} href={`http://localhost:3000?newPostPage=${values.newPostPage||1}&popularPostPage=1`} 
                     >First</a></li>
                         {renderPageNumbers}
-                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).page == pageNumbers.length)? 'disabled': ''}`} href={`http://localhost:3000?page=${pageNumbers.length}`}>Last</a></li>
+                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).popularPostPage == pageNumbers.length)? 'disabled': ''}`} href={`http://localhost:3000?newPostPage=${values.newPostPage||1}&popularPostPage=${pageNumbers.length}`}>Last</a></li>
                     </ul>
                     
                     

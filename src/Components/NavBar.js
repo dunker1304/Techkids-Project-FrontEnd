@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import WelcomeUser from './WelcomeUser';
 
 class NavBar extends Component{
     render(){
@@ -13,11 +13,13 @@ class NavBar extends Component{
                         <a href="/" className="homePage">Home</a>
                         <a href="/category" className="category">Categories</a>
                     </div>
+                    {!this.props.isAuthenticated ? (
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 navbar-right">
+                            <a href="/register" className="register">Register</a>
+                            <a href="/login" className="login">Login</a>
+                        </div>
+                    ): <WelcomeUser/>}
                     
-                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 navbar-right">
-                        <a href="/register" className="register">Register</a>
-                        <a href="/login" className="login">Login</a>
-                    </div>
                  
                     
                     
