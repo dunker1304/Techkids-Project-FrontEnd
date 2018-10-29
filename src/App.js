@@ -19,11 +19,14 @@ import NewPost from './Components/NewPost'
 import PostOfOneCategory from './Components/postOfOneCategory';
 import PopularPostInfo from './Containers/PopularPostInfo';
 class App extends Component {
-  state ={
-    isAuthenticated: false
-  }
+
   changeAuthenticated=()=>{
-    this.setState({isAuthenticated:true});
+   
+    const token= sessionStorage.getItem("status");
+    console.log(token);
+
+    if(!token ) return false;
+    else return true;
   }
   render() {
     
@@ -48,7 +51,7 @@ class App extends Component {
                     
                     <PopularPostInfo {...props}/>
                     {
-                      (!this.state.isAuthenticated) ? (<div className="container loginRegister"> 
+                      (!this.changeAuthenticated()) ? (<div className="container loginRegister"> 
                                   <div className="row">                            
                                         <LoginHome/>
                                         <RegisterHome/>                           

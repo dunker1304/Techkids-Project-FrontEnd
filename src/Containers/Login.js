@@ -32,7 +32,7 @@ class Login extends Component {
               .then(response=>{
                 const values = (this.props.location.search).replace("?path=","");
              
-                this.props.isAuthenticated();
+                sessionStorage.setItem('status','loggedIn') ;
                 
                 values? this.props.history.push(`${values}`) : this.props.history.push(`/`)
                

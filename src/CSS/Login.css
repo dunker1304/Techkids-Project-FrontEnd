@@ -248,10 +248,28 @@ body {
   .info {
     font-size:11px;
     padding:0;
-   float:left
+   
     
   }
   
+
+   .iconDetails {
+    margin-left:2%;
+   float:left; 
+   height:30px;
+   width:30px;	
+   } 
+   
+   .container2 {
+       padding:1%;
+       float:left;
+   }
+   h4{margin:0}
+   .left {float:left;}
+   .right {float:left;margin:-5px 0px 0 5px;}
+   .abcd{
+    font-size:.7em;
+   }
   
   .lastpostavatar img {
     margin:3px 10px 3px 0px;
@@ -260,6 +278,7 @@ body {
     width:30px;
     height:30px;
     display:inline-block;
+    
   }
   a.lastsubject{
     font-weight:600;
@@ -272,6 +291,7 @@ body {
     color:#AA0000;
     font-size:15px;
     font-weight:500;
+   
   } 
   
   .my-table tbody tr{
