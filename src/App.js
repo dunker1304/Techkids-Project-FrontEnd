@@ -18,16 +18,33 @@ import DetailPost from './Containers/DetailPost'
 import NewPost from './Components/NewPost'
 import PostOfOneCategory from './Components/postOfOneCategory';
 import PopularPostInfo from './Containers/PopularPostInfo';
+import axios from 'axios';
 class App extends Component {
+state={
 
+}
   changeAuthenticated=()=>{
    
     const token= sessionStorage.getItem("status");
     console.log(token);
-
     if(!token ) return false;
     else return true;
   }
+
+  componentDidMount(){
+    axios.get('http://localhost:6969/api/post')
+          .then(data=>{
+            
+              this.setState({
+                NumberOfPosts: data.data.NumberOfPosts
+              })
+              console.log(this.state.NumberOfPosts);
+          })
+          .catch(error =>{
+            console.log(error);
+          })
+  }
+
   render() {
     
     return (
@@ -47,9 +64,9 @@ class App extends Component {
                     </header> 
                     <Banner/>
                                           
-                    <NewPostInfo {...props}/>
+                    <NewPostInfo NumberOfPosts={this.state.NumberOfPosts} {...props}/>
                     
-                    <PopularPostInfo {...props}/>
+                    <PopularPostInfo NumberOfPosts={this.state.NumberOfPosts} {...props}/>
                     {
                       (!this.changeAuthenticated()) ? (<div className="container loginRegister"> 
                                   <div className="row">                            
@@ -59,7 +76,7 @@ class App extends Component {
                               </div>) : ""
                     }
                     
-                    <Footer/>
+                    <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>
                 </div>
               )
             }}/>
@@ -82,7 +99,7 @@ class App extends Component {
                     </header>
                     <Banner/>
                     <Category/>
-                    <Footer/>                                   
+                    <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>                                   
                 </div>
                 
               )
@@ -98,7 +115,7 @@ class App extends Component {
                     </header>
                     <Banner/>
                     <PostOfOneCategory {...props}/>
-                    <Footer/>                                   
+                    <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>                                   
                 </div>
                 
               )
@@ -114,7 +131,7 @@ class App extends Component {
                       </header>
                       <Banner/>
                       <UserInfo {...props}/>
-                      <Footer/> 
+                      <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/> 
                         
                   </div>
                   
@@ -131,7 +148,7 @@ class App extends Component {
                 </header> 
                 <Banner/>
                 <DetailPost {...props} />
-                <Footer/>  
+                <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>  
               </div>
               )
                 
@@ -145,8 +162,8 @@ class App extends Component {
                         <NavBar/>
                 </header> 
                 <Banner/>
-                <NewPost {...props}/>
-                <Footer/>  
+                <NewPost  {...props}/>
+                <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>  
               </div>
               )
                 

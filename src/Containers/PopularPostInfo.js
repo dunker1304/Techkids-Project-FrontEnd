@@ -37,7 +37,7 @@ class PopularPostInfo extends Component {
         
         // all page 
         const pageNumbers = [];
-        for(let i = 1;i<=Math.ceil(7/itemsPerPage);i++){
+        for(let i = 1;i<=Math.ceil(this.props.NumberOfPosts/itemsPerPage);i++){
             pageNumbers.push(i);
         }
 
@@ -114,7 +114,7 @@ class PopularPostInfo extends Component {
                     <h3>Infomation</h3>
                     <span>Catagory: </span> <a href="" className="catagory">{item.category.nameCategory}</a> <br/>
                     <span>By author: </span> <a href="" className="author">{item.author.username}</a> <br/>
-                    <span>Upload: </span> <span className="time">{item.createdAt}</span>
+                    <span>Upload: </span> <span className="time">{item.createdAt.substring(0,10)}</span>
                 </div>
                 
             </div>

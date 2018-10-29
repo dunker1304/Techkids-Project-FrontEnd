@@ -10,9 +10,9 @@ class Footer extends Component {
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 aboutUs">
                             <h3 className="aboutUs">About us</h3>
                             <h4 className="aboutUs">We're here for you</h4>
-                            <h4>Posts: <span className="NumOfPost">100</span></h4>
+                            <h4>Posts: <span className="NumOfPost">{this.props.NumberOfPosts}</span></h4>
                             <h4>Views: <span className="NumOfView">1000</span> </h4>
-                            <h4>Online: <span className="NumOfOnliner">20</span></h4>
+                            <h4>Online: <span className="NumOfOnliner">22</span></h4> 
                         </div>
                         
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 contact">
