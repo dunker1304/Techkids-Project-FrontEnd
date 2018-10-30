@@ -24,7 +24,7 @@ class Category extends Component {
 
             <tr>
                 <td className="my-td">
-                    <span className="lastpostavatar d-none d-md-block d-lg-block"> <img src="http://www.sitesplat.com/demo/phpBB3/FLATBOOTS//images/folder.png" className="float-md-left"></img></span>
+                    <span className="lastpostavatar d-none d-md-block d-lg-block"> <img src="http://www.sitesplat.com/demo/phpBB3/FLATBOOTS//images/folder.png" className="float-md-left" alt="a"></img></span>
                     <i className="fa fa-rss rss-color-forum btn-css pull-right d-none d-sm-block row-icon"></i>
                     <span className="lastsubject desc-wrapper"> <a href={`http://localhost:3000/category/${item._id}`} > {item.nameCategory}</a></span>
                 </td>

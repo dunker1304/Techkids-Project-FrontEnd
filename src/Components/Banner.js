@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import background from '../images/tile-head.png';
-import photo from '../images/photo.jpg';
+
 class Banner extends Component {
     render() {
         return (
@@ -8,7 +7,7 @@ class Banner extends Component {
                 <div className="container">
                     <div className="row">
                         
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <h2>Psychologist</h2>
                             <p className="intro">What's your problems? Curious how others might perceive your situation? <br/>
                             <a href="/newpost" className="askQuestion">Ask Your Question</a> today and find out what others think...</p>

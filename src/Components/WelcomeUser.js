@@ -87,7 +87,7 @@ class WelcomeUser extends Component {
                             <ul>
                                 <li><a href={`/user/${sessionStorage.getItem("id")}`} className="profile">Profile</a></li>
                                 <hr/>
-                                <li><a href="" onClick={this.handleLogout} className="logout">Log Out</a></li>
+                                <li><a href="/" onClick={this.handleLogout} className="logout">Log Out</a></li>
                             </ul>
                                                        
                            

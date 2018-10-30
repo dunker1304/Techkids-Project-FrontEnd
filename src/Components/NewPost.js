@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../CSS/NewPost.css'
 import axios from 'axios';
-import queryString from  'query-string'
+
 
 export default class NewPost extends Component {
   state= {

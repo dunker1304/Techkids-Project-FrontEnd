@@ -74,7 +74,7 @@ class LoginHome extends Component {
                        
                         <div className="input-group">
                             <div className="input-group-prepend">
-                                <span className="input-group-text" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                <span className="input-group-text" id="basic-addon1"><i className="fa fa-lock" aria-hidden="true"></i></span>
                             </div>
                             <input type="password" className="form-control" placeholder="Password" value={this.state.password}
                                onChange={this.handlerChangeInput} aria-label="password" aria-describedby="basic-addon1" name="password" /> 
@@ -84,7 +84,7 @@ class LoginHome extends Component {
                     </div>
                     <div className="form-check pull-left">
                             <input type="checkbox" name="remember" id="remember" className="form-check-input" />
-                            <label for="remember" className="form-check-label" id="lbal"> Remember Me</label>
+                            <label htmlFor="remember" className="form-check-label" id="lbal"> Remember Me</label>
                      </div>
 
                     <button type="submit " id="btnSignUp" className="btn btn-primary nutBam"  >Log me in</button>

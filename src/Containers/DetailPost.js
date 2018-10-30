@@ -128,8 +128,8 @@ state={
                 <div id = "likeview">
                   <table>
                     <tr>
-                        <th><img src= {iconLike} className="iconLike"/></th>
-                        <th><img src= {iconView} className="iconView"/></th>
+                        <th><img src= {iconLike} className="iconLike" alt="like"/></th>
+                        <th><img src= {iconView} className="iconView" alt="view"/></th>
                     </tr>
                     <tr>
                         <td> <p>{post.like}</p></td>

@@ -20,7 +20,7 @@ class UserInfo extends Component {
             <div className="userInfo">
                 <div className="container">
                     <h3 className="title">{this.state.userInfo ? this.state.userInfo.username: ""}</h3>
-                    <div className="avatar"><img src="http://planetstyles.net/demo/milk/3.2/1/download/file.php?avatar=2_1476042631.png"/></div>
+                    <div className="avatar"><img alt="ava" src="http://planetstyles.net/demo/milk/3.2/1/download/file.php?avatar=2_1476042631.png" href="/"/></div>
                     <div className="row">
                         
                         

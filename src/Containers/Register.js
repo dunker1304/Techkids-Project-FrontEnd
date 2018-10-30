@@ -98,7 +98,7 @@ class Register extends Component {
 
                                         <div className="form-check fadeIn fourth">
                                             <input type="checkbox" className="form-check-input" id="exampleCheck1" name="accepted" />
-                                            <label className="form-check-label accept" for="exampleCheck1">I have read and accepted  <a target="_blank" href="#" className="accept">the terms and conditions of use.</a></label>
+                                            <label className="form-check-label accept" for="exampleCheck1">I have read and accepted  <a target="_blank" href="/" className="accept">the terms and conditions of use.</a></label>
                                         </div>
 
                                         <input type="submit" id="btnSignUp" className="btn btn-primary fadeIn fourth nutBam" value="Create an account "></input>

@@ -69,7 +69,7 @@ class Login extends Component {
                             <label for="remember" className="form-check-label" id="lbal"> Remember Me</label>
                         </div>
                         <input type="submit" value="Log In" className="btn" />
-                        <a href="#" className="forgot-password">
+                        <a href="/" className="forgot-password">
                         Forgot the password?
                         </a>
                     </form>
