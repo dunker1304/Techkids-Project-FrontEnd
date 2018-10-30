@@ -20,6 +20,7 @@ import PostOfOneCategory from './Components/postOfOneCategory';
 import PopularPostInfo from './Containers/PopularPostInfo';
 import axios from 'axios';
 // change https://psychologist-backend.herokuapp.com == http://localhost:6969
+// change https://psychologist-frontend.herokuapp.com == http://localhost:3000
 class App extends Component {
 state={
   view:0
