@@ -113,8 +113,8 @@ class NewPostInfo extends Component {
                 
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 infoPost">
                     <h3>Infomation</h3>
-                    <span>Catagory: </span> <a href="" className="catagory">{item.category.nameCategory}</a> <br/>
-                    <span>By author: </span> <a href="" className="author">{item.author.username}</a> <br/>
+                    <span>Catagory: </span> <a href={`http://localhost:3000/category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
+                    <span>By author: </span> <a href={`http://localhost:3000/user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
                     <span>Upload: </span> <span className="time">{item.createdAt.substring(0,10)}</span>
                 </div>
                 
@@ -125,7 +125,8 @@ class NewPostInfo extends Component {
             
             <div className="postInfo">
                 <div className="container">
-                <h3>Newest Post</h3> 
+                <h3 className="headTitle">Newest Post</h3> 
+                <hr/>
                     {allPost}
                     
                     <ul className="page-numbers">

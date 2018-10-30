@@ -377,7 +377,13 @@ body {
     border:none;
     outline:none;
   }
-  
+  .nutBam a {
+    color: white;
+}
+
+.nutBam a:hover {
+    text-decoration: none;
+}
   /* LoginHome Css */
    .signin-text{
      font-family: "Asap","Arial","Helvetica",sans-serif;

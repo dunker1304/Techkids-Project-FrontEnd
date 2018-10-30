@@ -47,14 +47,16 @@ class WelcomeUser extends Component {
       }
       
       closeMenu(event) {
-        
-        if (!this.dropdownMenu.contains(event.target)) {
+        if(this.dropdownMenu){
+            if (!this.dropdownMenu.contains(event.target)) {
           
-          this.setState({ showMenu: false }, () => {
-            document.removeEventListener('click', this.closeMenu);
-          });  
-          
+                this.setState({ showMenu: false }, () => {
+                  document.removeEventListener('click', this.closeMenu);
+                });  
+                
+              }
         }
+        
     }
 
 

@@ -26,7 +26,7 @@ class postOfOneCategory extends Component {
                 <h4 className="title">Title: {item.title}</h4>
                 <p class="description">{item.description.substring(0,200)}...</p>
                 
-                <a href={`/detailpost?postId=${item._id}`} className="text-info">read more</a>
+                <a href={`/detailpost?postId=${item._id}`} className="text-info">Read more</a>
                 
                 
             </div>
@@ -55,6 +55,7 @@ class postOfOneCategory extends Component {
         return (
             <div className="postInfo">
                 <div className="container">
+                <h4 className="postOfCategory">{this.state.post? this.state.post[0].category.nameCategory : ""}</h4>
                     {postAll}
                 </div>
             </div>
