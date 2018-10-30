@@ -29,6 +29,8 @@ class WelcomeUser extends Component {
           .then(data=>{
             console.log(data);
             sessionStorage.removeItem('status');
+            sessionStorage.removeItem('username');
+            sessionStorage.removeItem('id');
             this.props.history.push(`/`);
            
           })
