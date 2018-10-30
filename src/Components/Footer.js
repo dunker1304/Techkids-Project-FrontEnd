@@ -11,7 +11,7 @@ class Footer extends Component {
                             <h3 className="aboutUs">About us</h3>
                             <h4 className="aboutUs">We're here for you</h4>
                             <h4>Posts: <span className="NumOfPost">{this.props.NumberOfPosts}</span></h4>
-                            <h4>Views: <span className="NumOfView">1000</span> </h4>
+                            <h4>Views: <span className="NumOfView">{this.props.view}</span> </h4>
                             <h4>Online: <span className="NumOfOnliner">22</span></h4> 
                         </div>
                         

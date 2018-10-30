@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 import '../CSS/WelcomeUser.css';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom'
 class WelcomeUser extends Component {
     constructor() {
         super();
@@ -16,13 +17,25 @@ class WelcomeUser extends Component {
 
     handleLogout=(event)=>{
         event.preventDefault();
-        axios.delete('http://localhost:6969/api/auth/logout')
-        .then(data=>{
+        axios({
+            method: 'delete',
+            url: 'http://localhost:6969/api/auth/logout',
+            data: {
+            }
+            ,
+            withCredentials:true
+            
+          })
+          .then(data=>{
             console.log(data);
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+            sessionStorage.removeItem('status');
+            this.props.history.push(`/`);
+           
+          })
+          .catch (err=>{
+            console.log(err);
+           });
+      
     }
 
     showMenu(event) {
@@ -53,7 +66,7 @@ class WelcomeUser extends Component {
                     <span>Welcome, </span>
                     <i className="fa fa-user-circle"></i>
                     <span onClick={this.showMenu}>
-                        User
+                       {sessionStorage.getItem("username")}
                         <i className="fa fa-caret-down"></i>
                     </span>
                     
@@ -68,7 +81,7 @@ class WelcomeUser extends Component {
                         >   
                             <div className="square"></div>
                             <ul>
-                                <li><a href="/user" className="profile">Profile</a></li>
+                                <li><a href={`/user/${sessionStorage.getItem("id")}`} className="profile">Profile</a></li>
                                 <hr/>
                                 <li><a href="" onClick={this.handleLogout} className="logout">Log Out</a></li>
                             </ul>
@@ -88,4 +101,4 @@ class WelcomeUser extends Component {
     }
 }
 
-export default WelcomeUser;
+export default withRouter(WelcomeUser);

@@ -123,7 +123,7 @@ state={
                 <p className="h1 text-left">{post.title}</p>
                 <div className="pl-3 pt-2 pr-3">
                 <p className="h6 text-left" >By {post.author.username}</p>
-                <p className="h6 text-left text-black-50" >{post.createdAt}</p>
+                <p className="h6 text-left text-black-50" >{post.createdAt.substring(0,10)}</p>
                 <p> {post.description}</p>
                 <div id = "likeview">
                   <table>

@@ -22,7 +22,7 @@ import axios from 'axios';
 
 class App extends Component {
 state={
-
+  view:0
 }
   changeAuthenticated=()=>{
    
@@ -44,6 +44,25 @@ state={
           .catch(error =>{
             console.log(error);
           })
+
+          axios({
+            method: 'PUT',
+            url: `http://localhost:6969/`,
+            data: {
+      
+            }
+      
+            ,
+            withCredentials:true
+            
+          })
+          .then(data=>{
+                this.setState({view: data.data.numberView})
+            })
+          .catch(error=>{
+              console.log(error);
+              })
+      
   }
 
   render() {
@@ -77,7 +96,7 @@ state={
                               </div>) : ""
                     }
                     
-                    <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>
+                    <Footer view={this.state.view} NumberOfPosts={this.state.NumberOfPosts} {...props}/>
                 </div>
               )
             }}/>
@@ -100,7 +119,7 @@ state={
                     </header>
                     <Banner/>
                     <Category/>
-                    <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>                                   
+                    <Footer view={this.state.view} NumberOfPosts={this.state.NumberOfPosts} {...props}/>                                   
                 </div>
                 
               )
@@ -116,7 +135,7 @@ state={
                     </header>
                     <Banner/>
                     <PostOfOneCategory {...props}/>
-                    <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>                                   
+                    <Footer view={this.state.view} NumberOfPosts={this.state.NumberOfPosts} {...props}/>                                   
                 </div>
                 
               )
@@ -132,7 +151,7 @@ state={
                       </header>
                       <Banner/>
                       <UserInfo {...props}/>
-                      <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/> 
+                      <Footer view={this.state.view} NumberOfPosts={this.state.NumberOfPosts} {...props}/> 
                         
                   </div>
                   
@@ -149,7 +168,7 @@ state={
                 </header> 
                 <Banner/>
                 <DetailPost {...props} />
-                <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>  
+                <Footer view={this.state.view} NumberOfPosts={this.state.NumberOfPosts} {...props}/>  
               </div>
               )
                 
@@ -164,7 +183,7 @@ state={
                 </header> 
                 <Banner/>
                 <NewPost  {...props}/>
-                <Footer NumberOfPosts={this.state.NumberOfPosts} {...props}/>  
+                <Footer  view={this.state.view} NumberOfPosts={this.state.NumberOfPosts} {...props}/>  
               </div>
               )
                 

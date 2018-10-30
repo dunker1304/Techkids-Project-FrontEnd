@@ -30,9 +30,13 @@ class Login extends Component {
                 
               })
               .then(response=>{
+                  console.log(response)
                 const values = (this.props.location.search).replace("?path=","");
              
                 sessionStorage.setItem('status','loggedIn') ;
+                sessionStorage.setItem('id', response.data._id);
+                sessionStorage.setItem('username', response.data.username);
+
                 
                 values? this.props.history.push(`${values}`) : this.props.history.push(`/`)
                
