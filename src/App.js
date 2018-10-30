@@ -96,7 +96,7 @@ state={
               return (
                 <div>
                     <header className="App-header">
-                        <NavBar/>
+                        <NavBar {...props} isAuthenticated={this.changeAuthenticated}/>
                     </header>
                     <Banner/>
                     <Category/>
@@ -112,7 +112,7 @@ state={
               return (
                 <div>
                     <header className="App-header">
-                        <NavBar/>
+                        <NavBar {...props} isAuthenticated={this.changeAuthenticated}/>
                     </header>
                     <Banner/>
                     <PostOfOneCategory {...props}/>
@@ -128,7 +128,7 @@ state={
                 return(
                   <div>
                       <header className="App-header">
-                        <NavBar/>
+                        <NavBar {...props} isAuthenticated={this.changeAuthenticated}/>
                       </header>
                       <Banner/>
                       <UserInfo {...props}/>
@@ -145,7 +145,7 @@ state={
               return (
                 <div>
                 <header className="App-header">
-                        <NavBar/>
+                        <NavBar {...props} isAuthenticated={this.changeAuthenticated}/>
                 </header> 
                 <Banner/>
                 <DetailPost {...props} />
@@ -160,7 +160,7 @@ state={
               return (
                 <div>
                 <header className="App-header">
-                        <NavBar/>
+                        <NavBar {...props} isAuthenticated={this.changeAuthenticated}/>
                 </header> 
                 <Banner/>
                 <NewPost  {...props}/>

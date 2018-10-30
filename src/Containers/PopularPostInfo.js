@@ -33,7 +33,7 @@ class PopularPostInfo extends Component {
     render() {
         
         const{Posts, itemsPerPage} = this.state;
-        console.log(Posts);
+        //console.log(Posts);
         
         // all page 
         const pageNumbers = [];

@@ -1,0 +1,55 @@
+.welcome {
+    float: right;
+    color: lightcyan;
+    margin-top: 35px;
+    position: relative;
+}
+
+i.fa.fa-user-circle {
+    font-size: 30px;
+}
+
+.menudrop {
+    position: absolute;
+    z-index: 10;
+    background: ghostwhite;
+    transition: 0.5s;
+    margin-top: 10px;
+    border-radius: 2px;
+    text-align: center;
+    right: 0;
+}
+
+.menudrop ul {
+    list-style: none;
+}
+
+
+
+.menudrop a {
+    color: black;
+}
+
+i.fa.fa-caret-down {
+    margin-left: 10px;
+}
+
+i.fa.fa-user-circle {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.square {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: ghostwhite;
+    transform: rotate(45deg);
+    top: -5px;
+    right: 15px;
+}
+
+.welcome span {
+    margin-right: 15px;
+    cursor: pointer;
+}

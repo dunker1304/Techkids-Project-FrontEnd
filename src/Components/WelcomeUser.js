@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
+import '../CSS/WelcomeUser.css';
+import axios from 'axios';
 class WelcomeUser extends Component {
     constructor() {
         super();
@@ -10,6 +12,17 @@ class WelcomeUser extends Component {
         
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
+    }
+
+    handleLogout=(event)=>{
+        event.preventDefault();
+        axios.delete('http://localhost:6969/api/auth/logout')
+        .then(data=>{
+            console.log(data);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
     }
 
     showMenu(event) {
@@ -34,33 +47,43 @@ class WelcomeUser extends Component {
 
     render() {
         return (
-            <div className="welcome">
-                <span>Welcome, </span>
-                <i className="fa fa-user-circle"></i>
-                <button onClick={this.showMenu}>
-                    User
-                    <i className="fa fa-caret-down"></i>
-                </button>
-                
-                {
-                this.state.showMenu
-                    ? (
-                    <div
-                        className="menu"
-                        ref={(element) => {
-                        this.dropdownMenu = element;
-                        }}
-                    >
-                        <button><a href="/user" className="profile">Profile</a></button>
-                        <button><a href="/logout" className="logout">Log Out</a></button>
-                        
-                    </div>
-                    )
-                    : (
-                    null
-                    )
-                }
+            
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                <div className="welcome">
+                    <span>Welcome, </span>
+                    <i className="fa fa-user-circle"></i>
+                    <span onClick={this.showMenu}>
+                        User
+                        <i className="fa fa-caret-down"></i>
+                    </span>
+                    
+                    {
+                    this.state.showMenu
+                        ? (
+                        <div
+                            className="menudrop"
+                            ref={(element) => {
+                            this.dropdownMenu = element;
+                            }}
+                        >   
+                            <div className="square"></div>
+                            <ul>
+                                <li><a href="/user" className="profile">Profile</a></li>
+                                <hr/>
+                                <li><a href="" onClick={this.handleLogout} className="logout">Log Out</a></li>
+                            </ul>
+                                                       
+                           
+                        </div>
+                        )
+                        : (
+                        null
+                        )
+                    }
+                </div>
             </div>
+            
+            
         );
     }
 }

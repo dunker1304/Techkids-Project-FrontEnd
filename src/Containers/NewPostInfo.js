@@ -33,7 +33,7 @@ class NewPostInfo extends Component {
     render() {
         
         const{Posts, itemsPerPage} = this.state;
-        console.log(Posts);
+        //console.log(Posts);
         
         // all page 
         const pageNumbers = [];
@@ -45,8 +45,7 @@ class NewPostInfo extends Component {
         const values = queryString.parse(this.props.location.search);
         const currentPage = values.newPostPage || 1;
         const showPageNumbers = [];
-        console.log("new:"+values.newPostPage);
-        console.log("popular:"+values.popularPostPage);
+        
         if(+currentPage -2 >= 1 && +currentPage +2 <= pageNumbers.length){
             for(let i= +currentPage-2;i<= +currentPage+2;i++){
                 showPageNumbers.push(i);
