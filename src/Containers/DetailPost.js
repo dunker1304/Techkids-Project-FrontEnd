@@ -17,7 +17,7 @@ state={
     //console.log(values.postId);
     axios({
       method: 'PUT',
-      url: `http://localhost:6969/api/post/detailpost?postId=${values.postId}`,
+      url: `https://psychologist-backend.herokuapp.com/api/post/detailpost?postId=${values.postId}`,
       data: {
       }
       ,
@@ -34,7 +34,7 @@ state={
         })
 
 
-    axios.get(`http://localhost:6969/api/post/detailpost?postId=${values.postId}`)
+    axios.get(`https://psychologist-backend.herokuapp.com/api/post/detailpost?postId=${values.postId}`)
         .then(data=>{
             this.setState({post: data.data.post,
             });
@@ -57,7 +57,7 @@ state={
     
     axios({
       method: 'PUT',
-      url: `http://localhost:6969/api/post/likedBy?postId=${values.postId}`,
+      url: `https://psychologist-backend.herokuapp.com/api/post/likedBy?postId=${values.postId}`,
       data: {
       }
       ,
@@ -82,7 +82,7 @@ state={
     
     axios({
       method: 'PUT',
-      url: `http://localhost:6969/api/post/addComment?postId=${values.postId}`,
+      url: `https://psychologist-backend.herokuapp.com/api/post/addComment?postId=${values.postId}`,
       data: {
         textArea : this.state.textArea,
 

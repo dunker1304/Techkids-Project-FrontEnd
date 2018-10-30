@@ -17,7 +17,7 @@ export default class NewPost extends Component {
 
   componentDidMount(){
     
-    axios.get('http://localhost:6969/api/category/data')
+    axios.get('https://psychologist-backend.herokuapp.com/api/category/data')
     
     .then(data => {
      this.setState({ categoiesCombo: data.data.result});
@@ -37,7 +37,7 @@ export default class NewPost extends Component {
    handlerOnSubmit=(event)=>{
             event.preventDefault();
            
-            axios.post("http://localhost:6969/api/post",{
+            axios.post("https://psychologist-backend.herokuapp.com/api/post",{
             
                 title: this.state.title,
                 description: this.state.description,

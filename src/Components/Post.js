@@ -12,7 +12,7 @@ state={
   componentDidMount(){
     const values = queryString.parse(this.props.location.search);
    
-    axios.get(`http://localhost:6969/api/post?page=${values.postId}`)
+    axios.get(`https://psychologist-backend.herokuapp.com/api/post?page=${values.postId}`)
         .then(data=>{
             this.setState({Posts: data.data.post,
             });

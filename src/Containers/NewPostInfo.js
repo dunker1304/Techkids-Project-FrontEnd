@@ -11,7 +11,7 @@ class NewPostInfo extends Component {
     componentDidMount(){
         const values = queryString.parse(this.props.location.search);
         //console.log(this.props.location);
-        axios.get(`http://localhost:6969/api/post/newpost?newPostPage=${values.newPostPage || 1 }&popularPostPage=${values.popularPostPage||1}`)
+        axios.get(`https://psychologist-backend.herokuapp.com/api/post/newpost?newPostPage=${values.newPostPage || 1 }&popularPostPage=${values.popularPostPage||1}`)
             .then(data=>{
                 this.setState({Posts: data.data.post,
                 });
@@ -77,7 +77,7 @@ class NewPostInfo extends Component {
             return (
               <li>
                 <a key={number} id={number} className={(currentPage===number)? "active":""}
-                href={`http://localhost:3000?newPostPage=${number}&popularPostPage=${values.popularPostPage || 1}`}
+                href={`https://psychologist-frontend.herokuapp.com?newPostPage=${number}&popularPostPage=${values.popularPostPage || 1}`}
                 >
                     {number}
                 </a>
@@ -96,7 +96,7 @@ class NewPostInfo extends Component {
                     <h4 className="title">Title: {item.title}</h4>
                     <p className="description">{item.description}</p>
                     <div className="read-more">
-                        <a href={`http://localhost:3000/detailpost?postId=${item._id}`} >Read more...</a>  
+                        <a href={`https://psychologist-frontend.herokuapp.com//detailpost?postId=${item._id}`} >Read more...</a>  
                     </div>
                     
                     
@@ -114,8 +114,8 @@ class NewPostInfo extends Component {
                 
                 <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 infoPost">
                     <h3>Infomation</h3>
-                    <span>Catagory: </span> <a href={`http://localhost:3000/category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
-                    <span>By author: </span> <a href={`http://localhost:3000/user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
+                    <span>Catagory: </span> <a href={`https://psychologist-frontend.herokuapp.com//category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
+                    <span>By author: </span> <a href={`https://psychologist-frontend.herokuapp.com//user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
                     <span>Upload: </span> <span className="time">{item.createdAt.substring(0,10)}</span>
                 </div>
                 
@@ -131,10 +131,10 @@ class NewPostInfo extends Component {
                     {allPost}
                     
                     <ul className="page-numbers">
-                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).newPostPage === 1)? 'disabled': ''}`} href={`http://localhost:3000?newPostPage=1&popularPostPage=${values.popularPostPage || 1}`} 
+                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).newPostPage === 1)? 'disabled': ''}`} href={`https://psychologist-frontend.herokuapp.com?newPostPage=1&popularPostPage=${values.popularPostPage || 1}`} 
                     >First</a></li>
                         {renderPageNumbers}
-                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).newPostPage === pageNumbers.length)? 'disabled': ''}`} href={`http://localhost:3000?newPostPage=${pageNumbers.length}&popularPostPage=${values.popularPostPage || 1}`}>Last</a></li>
+                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).newPostPage === pageNumbers.length)? 'disabled': ''}`} href={`https://psychologist-frontend.herokuapp.com?newPostPage=${pageNumbers.length}&popularPostPage=${values.popularPostPage || 1}`}>Last</a></li>
                     </ul>
                     
                     

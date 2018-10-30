@@ -19,7 +19,7 @@ class Login extends Component {
             event.preventDefault();
             axios({
                 method: 'post',
-                url: "http://localhost:6969/api/auth/login",
+                url: "https://psychologist-backend.herokuapp.com/api/auth/login",
                 data: {
                   
                 username: this.state.username,

@@ -19,7 +19,7 @@ class WelcomeUser extends Component {
         event.preventDefault();
         axios({
             method: 'delete',
-            url: 'http://localhost:6969/api/auth/logout',
+            url: 'https://psychologist-backend.herokuapp.com/api/auth/logout',
             data: {
             }
             ,

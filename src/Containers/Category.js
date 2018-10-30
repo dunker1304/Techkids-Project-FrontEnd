@@ -8,7 +8,7 @@ class Category extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:6969/api/category')
+        axios.get('https://psychologist-backend.herokuapp.com/api/category')
             .then(data => {
                 this.setState({ category: data.data.item });
                 console.log(this.state.category);
@@ -26,7 +26,7 @@ class Category extends Component {
                 <td className="my-td">
                     <span className="lastpostavatar d-none d-md-block d-lg-block"> <img src="http://www.sitesplat.com/demo/phpBB3/FLATBOOTS//images/folder.png" className="float-md-left" alt="a"></img></span>
                     <i className="fa fa-rss rss-color-forum btn-css pull-right d-none d-sm-block row-icon"></i>
-                    <span className="lastsubject desc-wrapper"> <a href={`http://localhost:3000/category/${item._id}`} > {item.nameCategory}</a></span>
+                    <span className="lastsubject desc-wrapper"> <a href={`https://psychologist-frontend.herokuapp.com//category/${item._id}`} > {item.nameCategory}</a></span>
                 </td>
                 <td className="my-td" >
                     {item.bmark.length}<br />Posts
@@ -38,10 +38,10 @@ class Category extends Component {
                         <img src="http://planetstyles.net/demo/milk/3.2/1/download/file.php?avatar=2_1476042631.png" alt="avatar" className='iconDetails  d-none d-md-block d-lg-block' ></img>
                         </div>
                          <div className="right" >
-                         <a href ={ item.bmark[item.bmark.length-1] ?`http://localhost:3000/detailpost?postId=${item.bmark[item.bmark.length-1]._id}` :""} className="lastsubject">  {item.bmark[item.bmark.length-1]?  item.bmark[item.bmark.length-1].title  :""}</a>
+                         <a href ={ item.bmark[item.bmark.length-1] ?`https://psychologist-frontend.herokuapp.com//detailpost?postId=${item.bmark[item.bmark.length-1]._id}` :""} className="lastsubject">  {item.bmark[item.bmark.length-1]?  item.bmark[item.bmark.length-1].title  :""}</a>
 
                                 <div className="abcd">
-                                 by <a href = { item.TEST[item.TEST.length-1]?`http://localhost:3000/user/${item.TEST[item.TEST.length-1]._id}` :""} className="lastauthor">  
+                                 by <a href = { item.TEST[item.TEST.length-1]?`https://psychologist-frontend.herokuapp.com//user/${item.TEST[item.TEST.length-1]._id}` :""} className="lastauthor">  
                                 {item.TEST[item.TEST.length-1]? item.TEST[item.TEST.length-1].username:""}
                                   </a> <br/>
                                {item.bmark[item.bmark.length-1]?item.bmark[item.bmark.length-1].createdAt.split("T")[0]:""}</div>

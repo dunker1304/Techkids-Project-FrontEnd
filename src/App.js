@@ -19,7 +19,7 @@ import NewPost from './Components/NewPost'
 import PostOfOneCategory from './Components/postOfOneCategory';
 import PopularPostInfo from './Containers/PopularPostInfo';
 import axios from 'axios';
-
+// change https://psychologist-backend.herokuapp.com == http://localhost:6969
 class App extends Component {
 state={
   view:0
@@ -33,7 +33,7 @@ state={
   }
 
   componentDidMount(){
-    axios.get('http://localhost:6969/api/post')
+    axios.get('https://psychologist-backend.herokuapp.com/api/post')
           .then(data=>{
             
               this.setState({
@@ -47,7 +47,7 @@ state={
 
           axios({
             method: 'PUT',
-            url: `http://localhost:6969/`,
+            url: `https://psychologist-backend.herokuapp.com/`,
             data: {
       
             }

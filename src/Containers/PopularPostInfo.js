@@ -11,7 +11,7 @@ class PopularPostInfo extends Component {
     componentDidMount(){
         const values = queryString.parse(this.props.location.search);
         //console.log(this.props.location);
-        axios.get(`http://localhost:6969/api/post/popularpost?newPostPage=${values.newPostPage || 1 }&popularPostPage=${values.popularPostPage||1}`)
+        axios.get(`https://psychologist-backend.herokuapp.com/api/post/popularpost?newPostPage=${values.newPostPage || 1 }&popularPostPage=${values.popularPostPage||1}`)
             .then(data=>{
                 this.setState({Posts: data.data.post,
                 });
@@ -76,7 +76,7 @@ class PopularPostInfo extends Component {
             return (
               <li>
                 <a key={number} id={number} className={(currentPage===number)? "active":""}
-                href={`http://localhost:3000?newPostPage=${values.newPostPage||1}&popularPostPage=${number}`}
+                href={`https://psychologist-frontend.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=${number}`}
                 >
                     {number}
                 </a>
@@ -95,7 +95,7 @@ class PopularPostInfo extends Component {
                     <h4 className="title">Title: {item.title}</h4>
                     <p className="description">{item.description}</p>
                     <div className="read-more">
-                        <a href={`http://localhost:3000/detailpost?postId=${item._id}`} >Read more...</a>  
+                        <a href={`https://psychologist-frontend.herokuapp.com/detailpost?postId=${item._id}`} >Read more...</a>  
                     </div>
                     
                     
@@ -113,8 +113,8 @@ class PopularPostInfo extends Component {
                 
                 <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 infoPost">
                     <h3>Infomation</h3>
-                    <span>Catagory: </span> <a href={`http://localhost:3000/category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
-                    <span>By author: </span> <a href={`http://localhost:3000/user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
+                    <span>Catagory: </span> <a href={`https://psychologist-frontend.herokuapp.com//category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
+                    <span>By author: </span> <a href={`https://psychologist-frontend.herokuapp.com//user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
                     <span>Upload: </span> <span className="time">{item.createdAt.substring(0,10)}</span>
                 </div>
                 
@@ -130,10 +130,10 @@ class PopularPostInfo extends Component {
                     {allPost}
                     
                     <ul className="page-numbers">
-                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).popularPostPage === 1)? 'disabled': ''}`} href={`http://localhost:3000?newPostPage=${values.newPostPage||1}&popularPostPage=1`} 
+                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).popularPostPage === 1)? 'disabled': ''}`} href={`https://psychologist-frontend.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=1`} 
                     >First</a></li>
                         {renderPageNumbers}
-                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).popularPostPage === pageNumbers.length)? 'disabled': ''}`} href={`http://localhost:3000?newPostPage=${values.newPostPage||1}&popularPostPage=${pageNumbers.length}`}>Last</a></li>
+                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).popularPostPage === pageNumbers.length)? 'disabled': ''}`} href={`https://psychologist-frontend.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=${pageNumbers.length}`}>Last</a></li>
                     </ul>
                     
                     

@@ -25,7 +25,7 @@ class Register extends Component {
        
       } 
       else this.setState({isEqual:true});
-        axios.post("http://localhost:6969/api/user", {
+        axios.post("https://psychologist-backend.herokuapp.com/api/user", {
             username: this.state.username,
             password: this.state.password,
             re_password :this.state.re_password

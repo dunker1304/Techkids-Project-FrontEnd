@@ -7,7 +7,7 @@ class postOfOneCategory extends Component {
     componentDidMount(){
         let value= this.props.match.params.id;
         console.log(value);
-        axios.get(`http://localhost:6969/api/category/${value}`)
+        axios.get(`https://psychologist-backend.herokuapp.com/api/category/${value}`)
         .then(data => {
          this.setState({ post: data.data.item });
          console.log(this.state.post );
@@ -43,8 +43,8 @@ class postOfOneCategory extends Component {
             
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 infoPost">
                 <h3>Infomation</h3>
-                <span>Catagory: </span> <a href={`http://localhost:3000/category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
-                <span>By author: </span> <a href={`http://localhost:3000/user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
+                <span>Catagory: </span> <a href={`https://psychologist-frontend.herokuapp.com//category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
+                <span>By author: </span> <a href={`https://psychologist-frontend.herokuapp.com//user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
                 <span>Upload: </span> <span className="time">{item.createdAt.split("T")[0]}</span>
             </div>
             
