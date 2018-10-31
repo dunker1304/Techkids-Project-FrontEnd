@@ -7,7 +7,7 @@ class UserInfo extends Component {
     componentDidMount(){
         const value= this.props.match.params.id;
         console.log(value)
-        axios.get(`http:///api/user/${value}`)
+        axios.get(`https://psychologist-backend.herokuapp.com/api/user/${value}`)
         .then(data => {
             this.setState({ userInfo: data.data.userFound, countPerUser:data.data.countPerUser,countAll:data.data.countAll,postPopulate:data.data.postPopulate });
           
