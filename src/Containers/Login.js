@@ -42,11 +42,14 @@ class Login extends Component {
                
               })
               .catch (err=>{
-                if  (err.response.status===402) {
-                    this.setState({passWrong:true,nameWrong:false});
-                }
-                     else this.setState({nameWrong:true})
-               });
+                  if(err.response.status){
+                    if  (err.response.status===402) {
+                        this.setState({passWrong:true,nameWrong:false});
+                        }
+                         else this.setState({nameWrong:true})
+                    }
+                  }
+                );
          }
     
     
