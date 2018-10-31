@@ -18,7 +18,7 @@ export default class Comment extends Component {
         });
   }
   render() {
-    console.log(this.state.user);
+    //console.log(this.state.user);
     return (
       
       <div className="row mt-3 comment">                        

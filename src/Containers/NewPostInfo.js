@@ -22,13 +22,7 @@ class NewPostInfo extends Component {
             })
     }
     
-    /*handleClick = (event) => {
-        
-        this.setState({
-            currentPage: Number(event.target.id)
-        });
-        
-    }*/
+    
 
     render() {
         
@@ -72,7 +66,9 @@ class NewPostInfo extends Component {
                 showPageNumbers.push(i);
             }
         }
-        
+        console.log(pageNumbers);
+        console.log(showPageNumbers);
+
         const renderPageNumbers = showPageNumbers.map(number => {
             return (
               <li>
