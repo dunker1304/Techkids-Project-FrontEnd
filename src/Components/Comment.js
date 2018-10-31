@@ -28,7 +28,7 @@ export default class Comment extends Component {
           
           <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 justify-content-center  infoPost">
               <img className="text-center" src={iconBoy} alt="ava"/> <br/>
-              <span>By author: </span> <a href="/" className="author text-center">{this.state.user.username}</a> <br/>
+              <span>By author: </span> <a href="/" className="author text-center">{this.props.info.author}</a> <br/>
               <span>Upload: </span> <span className="time text-center detailpost">{this.props.info.createdAt.substring(0,10)}</span>
           </div>
       </div>
