@@ -295,6 +295,10 @@ a.text-info:hover {
 .postInfo hr {
     width: 70%;
 }
+
+span.time.text-center.detailpost {
+    color: gray;
+}
 /* paging css*/
 
 ul.page-numbers {
