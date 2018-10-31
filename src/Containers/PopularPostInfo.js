@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import queryString from 'query-string';
 class PopularPostInfo extends Component {
     state={
-        itemsPerPage: 1
+        itemsPerPage: 3
     }
 
 
