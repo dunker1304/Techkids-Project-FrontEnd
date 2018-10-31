@@ -42,7 +42,7 @@ class Login extends Component {
                
               })
               .catch (err=>{
-                  if(err.response.status){
+                  if(err.response){
                     if  (err.response.status===402) {
                         this.setState({passWrong:true,nameWrong:false});
                         }
