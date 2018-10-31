@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import queryString from 'query-string';
 class NewPostInfo extends Component {
     state={
-        itemsPerPage: 3
+        itemsPerPage: 1
     }
 
 
@@ -26,8 +26,7 @@ class NewPostInfo extends Component {
 
     render() {
         
-        const{itemsPerPage} = this.state;
-        //const{Posts, itemsPerPage} = this.state;
+        const{Posts, itemsPerPage} = this.state;
         //console.log(Posts);
         
         // all page 
@@ -46,34 +45,32 @@ class NewPostInfo extends Component {
                 showPageNumbers.push(i);
             }
         }
-        else if(currentPage === 2){
+        else if(currentPage == 2){
             for(let i= +currentPage-1;i<= +currentPage+3;i++){
                 showPageNumbers.push(i);
             }
         }
-        else if(currentPage === 1){
+        else if(currentPage == 1){
             for(let i= 1;i<= +currentPage+4;i++){
                 showPageNumbers.push(i);
             }
         }
-        else if(currentPage === pageNumbers.length - 1){
+        else if(currentPage == pageNumbers.length - 1){
             for(let i= +currentPage-3;i<= +currentPage+1;i++){
                 showPageNumbers.push(i);
             }
         }
-        else if(currentPage === pageNumbers.length){
+        else if(currentPage == pageNumbers.length){
             for(let i= +currentPage-4;i<= +currentPage;i++){
                 showPageNumbers.push(i);
             }
         }
-        console.log(pageNumbers);
-        console.log(showPageNumbers);
-
+        
         const renderPageNumbers = showPageNumbers.map(number => {
             return (
               <li>
-                <a key={number} id={number} className={(currentPage===number)? "active":""}
-                href={`https://psychologist.herokuapp.com?newPostPage=${number}&popularPostPage=${values.popularPostPage || 1}`}
+                <a key={number} id={number} className={(currentPage==number)? "active":""}
+                href={`https://psychologist.herokuapp.com/?newPostPage=${number}&popularPostPage=${values.popularPostPage || 1}`}
                 >
                     {number}
                 </a>
@@ -87,10 +84,10 @@ class NewPostInfo extends Component {
         const allPost = this.state.Posts ? this.state.Posts.map(item=>
             <div className="row">
                 
-                <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7 post sidebar-box">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 post sidebar-box">
                     <h3>Post</h3>
                     <h4 className="title">Title: {item.title}</h4>
-                    <p className="description">{item.description}</p>
+                    <p class="description">{item.description}</p>
                     <div className="read-more">
                         <a href={`https://psychologist.herokuapp.com/detailpost?postId=${item._id}`} >Read more...</a>  
                     </div>
@@ -99,7 +96,7 @@ class NewPostInfo extends Component {
                 </div>
                 
                 
-                <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2 statics">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 statics">
                     <h3>Statics</h3>
                     <h4>Likes</h4>
                     <span className="NumOfLikes">{item.like}</span>
@@ -108,7 +105,7 @@ class NewPostInfo extends Component {
                 </div>
                 
                 
-                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 infoPost">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 infoPost">
                     <h3>Infomation</h3>
                     <span>Catagory: </span> <a href={`https://psychologist.herokuapp.com/category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
                     <span>By author: </span> <a href={`https://psychologist.herokuapp.com/user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
@@ -127,10 +124,10 @@ class NewPostInfo extends Component {
                     {allPost}
                     
                     <ul className="page-numbers">
-                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).newPostPage === 1)? 'disabled': ''}`} href={`https://psychologist.herokuapp.com?newPostPage=1&popularPostPage=${values.popularPostPage || 1}`} 
+                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).newPostPage == 1)? 'disabled': ''}`} href={`https://psychologist.herokuapp.com/?newPostPage=1&popularPostPage=${values.popularPostPage || 1}`} 
                     >First</a></li>
                         {renderPageNumbers}
-                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).newPostPage === pageNumbers.length)? 'disabled': ''}`} href={`https://psychologist.herokuapp.com?newPostPage=${pageNumbers.length}&popularPostPage=${values.popularPostPage || 1}`}>Last</a></li>
+                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).newPostPage == pageNumbers.length)? 'disabled': ''}`} href={`https://psychologist.herokuapp.com/?newPostPage=${pageNumbers.length}&popularPostPage=${values.popularPostPage || 1}`}>Last</a></li>
                     </ul>
                     
                     
