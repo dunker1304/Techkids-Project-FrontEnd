@@ -35,7 +35,7 @@ class Register extends Component {
                 this.setState({isStatus:true})
                 console.log(this.state.isStatus)
                 this.props.isAuthenticated();
-                 this.props.history.push('/');
+                 this.props.history.push('https://psychologist.herokuapp.com');
 
             })
             .catch(err => { 
