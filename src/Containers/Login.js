@@ -35,7 +35,7 @@ class Login extends Component {
              
                 sessionStorage.setItem('status','loggedIn') ;
                 sessionStorage.setItem('id', response.data._id);
-                sessionStorage.setItem('username', response.data.username);
+                sessionStorage.setItem('username', response.data.user.username);
 
                 
                 values? this.props.history.push(`${values}`) : this.props.history.push(`/`)

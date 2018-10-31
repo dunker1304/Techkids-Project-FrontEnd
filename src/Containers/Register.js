@@ -35,7 +35,7 @@ class Register extends Component {
                 this.setState({isStatus:true})
                 sessionStorage.setItem('status','loggedIn') ;
                 sessionStorage.setItem('id', response.data._id);
-                sessionStorage.setItem('username', response.data.username);
+                sessionStorage.setItem('username', response.data.user.username);
                 console.log(this.state.isStatus)
                 
                 this.props.history.push('/');
