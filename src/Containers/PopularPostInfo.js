@@ -76,7 +76,7 @@ class PopularPostInfo extends Component {
             return (
               <li>
                 <a key={number} id={number} className={(currentPage===number)? "active":""}
-                href={`https://psychologist-frontend.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=${number}`}
+                href={`https://psychologist.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=${number}`}
                 >
                     {number}
                 </a>
@@ -130,10 +130,10 @@ class PopularPostInfo extends Component {
                     {allPost}
                     
                     <ul className="page-numbers">
-                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).popularPostPage === 1)? 'disabled': ''}`} href={`https://psychologist-frontend.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=1`} 
+                    <li><a className={`firstPage ${(queryString.parse(this.props.location.search).popularPostPage === 1)? 'disabled': ''}`} href={`https://psychologist.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=1`} 
                     >First</a></li>
                         {renderPageNumbers}
-                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).popularPostPage === pageNumbers.length)? 'disabled': ''}`} href={`https://psychologist-frontend.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=${pageNumbers.length}`}>Last</a></li>
+                    <li><a className={`lastPage ${(queryString.parse(this.props.location.search).popularPostPage === pageNumbers.length)? 'disabled': ''}`} href={`https://psychologist.herokuapp.com?newPostPage=${values.newPostPage||1}&popularPostPage=${pageNumbers.length}`}>Last</a></li>
                     </ul>
                     
                     
