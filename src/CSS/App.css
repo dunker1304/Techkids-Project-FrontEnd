@@ -141,7 +141,9 @@ a.askQuestion:hover {
 .postInfo {
     margin-top: 60px;
   }
-
+span.time{
+    color: cyan;
+}
 .infoPost a {
     color: cyan;
 }
