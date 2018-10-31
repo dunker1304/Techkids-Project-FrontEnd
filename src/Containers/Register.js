@@ -33,9 +33,12 @@ class Register extends Component {
         })
             .then(response => {
                 this.setState({isStatus:true})
+                sessionStorage.setItem('status','loggedIn') ;
+                sessionStorage.setItem('id', response.data._id);
+                sessionStorage.setItem('username', response.data.username);
                 console.log(this.state.isStatus)
                 this.props.isAuthenticated();
-                 this.props.history.push('https://psychologist.herokuapp.com');
+                this.props.history.push('/');
 
             })
             .catch(err => { 
