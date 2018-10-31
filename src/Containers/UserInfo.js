@@ -29,7 +29,7 @@ class UserInfo extends Component {
                             <h4 className="posts">Total Posts: <span>{this.state.countPerUser? this.state.countPerUser:""}</span></h4>
                             <h4 className="statistic">(<span>{(this.state.countPerUser !=null && this.state.countAll!=null)?(this.state.countPerUser *100/this.state.countAll).toFixed(2): "0"}</span>% of all posts)</h4>
                             <h4 className="mostPopular">The most popular post: </h4>
-                            <span><a  href={ (this.state.postPopulate && this.state.postPopulate[0] )  ?`https://psychologist-frontend.herokuapp.com/detailpost?postId=${this.state.postPopulate[0]._id}`:""}>{(this.state.postPopulate && this.state.postPopulate[0]) ? this.state.postPopulate[0].title :""}</a></span>
+                            <span><a  href={ (this.state.postPopulate && this.state.postPopulate[0] )  ?`https://psychologist.herokuapp.com/detailpost?postId=${this.state.postPopulate[0]._id}`:""}>{(this.state.postPopulate && this.state.postPopulate[0]) ? this.state.postPopulate[0].title :""}</a></span>
                         </div>
                         
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 quote">

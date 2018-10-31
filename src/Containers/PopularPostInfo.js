@@ -95,7 +95,7 @@ class PopularPostInfo extends Component {
                     <h4 className="title">Title: {item.title}</h4>
                     <p className="description">{item.description}</p>
                     <div className="read-more">
-                        <a href={`https://psychologist-frontend.herokuapp.com/detailpost?postId=${item._id}`} >Read more...</a>  
+                        <a href={`https://psychologist.herokuapp.com/detailpost?postId=${item._id}`} >Read more...</a>  
                     </div>
                     
                     
@@ -113,8 +113,8 @@ class PopularPostInfo extends Component {
                 
                 <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 infoPost">
                     <h3>Infomation</h3>
-                    <span>Catagory: </span> <a href={`https://psychologist-frontend.herokuapp.com//category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
-                    <span>By author: </span> <a href={`https://psychologist-frontend.herokuapp.com//user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
+                    <span>Catagory: </span> <a href={`https://psychologist.herokuapp.com/category/${item.category._id}`} className="catagory">{item.category.nameCategory}</a> <br/>
+                    <span>By author: </span> <a href={`https://psychologist.herokuapp.com/user/${item.author._id}`} className="author">{item.author.username}</a> <br/>
                     <span>Upload: </span> <span className="time">{item.createdAt.substring(0,10)}</span>
                 </div>
                 
